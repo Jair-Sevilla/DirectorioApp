@@ -11,38 +11,42 @@ const consumirApi = () => {
     .then((data) => {
       //La data de la API la vamos a llevar al html
       //Paso 1.- Definimos las constantes que vamos a usar y el html que vamos a afectar
-      const nombre = document.getElementById("nombre");
-      const nombreUsuario = document.getElementById("nombreUsuario");
-      const email = document.getElementById("email");
-      const phone = document.getElementById("phone");
-      const street = document.getElementById("street");
       const contenedor = document.getElementById("contenedor");
 
-      nombre.innerText = data[0].name; //name no existe proviene desde la API
-      nombreUsuario.innerText = data[0].username;
-      email.innerText = data[0].email;
-      phone.innerText = data[0].phone;
-      website.innerText = data[0].website; 
-      //street.innerText = data [0].address.street;
+      //nombre.innerText = data[0].name; //name no existe proviene desde la API
       //innerHTML inserta html directo/ innerText es texto normal
-      street.innerHTML= `<h1>${data[0].address.street}</h1>`
+      //street.innerHTML= `<h1>${data[0].address.street}</h1>`
 
       //Aqui vamos a facilitarnos la vida con forEach
       //forEach es un metodo de arreglos que ejecuta una funcion por cada elemento que esta en el arreglo
       data.forEach((usuario, index)=>
         //+= es como añadir 
+  //-------------------------------Grid cards-----------------------------------------------------------------------------------------
         contenedor.innerHTML+=`
-        <p>${usuario.name}</p>
-        <p>${usuario.username}</p>
-        <p>${usuario.email}</p>
-        <p>${usuario.phone}</p>
-        <p>${usuario.website}</p>
-        <p>${usuario.address.street}</p>
-        <hr>
-    
+        <div class="card" style="width: 25rem;">
+  <img src="https://cdn-icons-png.flaticon.com/512/7816/7816916.png" class="card-img-top" alt="usuario">
+  <div class="card-body">
+      <p class="card-text"><b>Informacion de: </b></p>
+    <h3 class="card-title">${usuario.name}</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Nombre de Usuario: </b>${usuario.username}</li>
+    <li class="list-group-item"><b>Correo Electronico: </b>${usuario.email}</li>
+    <li class="list-group-item"><b>Telefono: </b>${usuario.phone}</li>
+    <li class="list-group-item"><b>Sitio Web: </b>${usuario.website}</li>
+    <li class="list-group-item">
+  <b>Direccion : </b><br>
+  <b>Calle: </b>${usuario.address.street}<br>
+  <b>Suite: </b>${usuario.address.suite}<br>
+  <b>Ciudad: </b>${usuario.address.city}<br>
+  <b>Codigo Postal: </b>${usuario.address.zipcode}
+</li>
+  </ul>
+</div>
         `);
-         //<p> es parrafo
-        //<hr> es un salto de renglon
+  //-------------------------------Grid cards-----------------------------------------------------------------------------------------
+  //<p> es parrafo
+  //<hr> es un salto de renglon
     })
 
     //Descubrir que hacer en caso de que no me responda Error 404 not found

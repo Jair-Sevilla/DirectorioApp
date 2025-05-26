@@ -23,6 +23,7 @@ const consumirApi = () => {
         //+= es como añadir 
   //-------------------------------Grid cards-----------------------------------------------------------------------------------------
         contenedor.innerHTML+=`
+        
         <div class="card" style="width: 25rem;">
   <img src="https://cdn-icons-png.flaticon.com/512/7816/7816916.png" class="card-img-top" alt="usuario">
   <div class="card-body">

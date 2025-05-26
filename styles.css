@@ -1,0 +1,11 @@
+/* Esto nos sirve para definir la clase padre para que los elementos hijos esten
+dentro de una grilla o cuadricula(grid) */
+.parent {
+/*background-color: blanchedalmond;*/
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 20px;
+grid-row-gap: 15px;
+align-items: center;
+}

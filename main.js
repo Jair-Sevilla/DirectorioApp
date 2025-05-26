@@ -2,6 +2,9 @@ console.log ("Hola");
 //En java script tenemos las funciones tipo flecha
 //Utilizaremos fetch que es un metodo para consumir una API
 
+//Se puede usar un arreglo para utilizar imagenes
+const arregloDeImagenes = [
+]
 //Paso 1: Funcion flecha
 const consumirApi = () => {
     fetch("https://jsonplaceholder.typicode.com/users")

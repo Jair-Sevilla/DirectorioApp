@@ -1,11 +1,34 @@
 /* Esto nos sirve para definir la clase padre para que los elementos hijos esten
 dentro de una grilla o cuadricula(grid) */
 .parent {
-/*background-color: blanchedalmond;*/
+background-color: whitesmoke;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(4, 1fr);
 grid-column-gap: 20px;
-grid-row-gap: 15px;
+grid-row-gap: 20px;
 align-items: center;
+}
+/* 
+Tarea
+Media query
+Arreglar visualmente con media query
+*/
+
+@media (max-width: 600px) {
+    h2 {
+        text-align: center;
+    }
+    h4 {
+        text-align: center;
+    }
+  .parent {
+background-color: whitesmoke;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 20px;
+grid-row-gap: 20px;
+align-items: center;
+}
 }
